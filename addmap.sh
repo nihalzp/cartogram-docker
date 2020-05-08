@@ -9,6 +9,7 @@ then
 		exit 1
 	else
 		sudo docker exec -it $CONTAINER python addmap.py "$@"
+		sudo chown `id -un`:`id -gn` -R cartogram-web/
 	fi
 else
 	CONTAINER=`docker-compose ps | awk '$1~/web/ && $0~/Up/ { print $1 }'`

@@ -57,10 +57,17 @@ git config --global user.name "Your Name"
 
 Now, fork these two repositories so you have your own version of them. Note the URL that you will need to use to clone both repositories.
 
+Then, clone this (i.e., `cartogram-docker`) repository:
+
+```shell script
+$ git clone git@github.com:jansky/cartogram-docker.git
+```
+
 Now, clone your forked `cartogram-web` and `cartogram-serverless` into the root directory
 of *this* repository (i.e., the folder containing this readme):
 
 ```shell script
+$ cd cartogram-docker
 $ git clone git@github.com:your-github-username/cartogram-web.git
 $ git clone git@github.com:your-github-username/cartogram-serverless.git
 ``` 

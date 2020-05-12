@@ -1,4 +1,4 @@
-# Setting Up PyCharm For Developing the go-cart.io Website
+# Setting Up PyCharm for Developing the go-cart.io Website
 
 PyCharm is the recommended IDE to use while developing the go-cart.io website. You will need to use the Professional edition to take advantage of Docker integration that will allow for code completion and correct import error detection. This document will help you set up PyCharm for development of the go-cart.io website on your computer. It assumes that you have already set up the Docker application for the website. If you have not done so, please do this by following the guide in `README.md`.
 

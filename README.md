@@ -18,7 +18,7 @@ In addition, the main web application also uses PostgreSQL and Redis for data st
 This repository contains a Docker compose file that makes it easy to install and
 run all of the components necessary to develop the go-cart.io website locally
 on your computer. This readme file contains instructions on how to go about this
-on Ubuntu and macOS.
+on Ubuntu and macOS. If you are using Windows, please follow the instructions in `wsl.md` instead.
 
 ## Installing Docker
 
@@ -64,6 +64,12 @@ $ sudo apt-get update
 $ sudo apt-get install docker-ce docker-ce-cli containerd.io
 ```
 
+Then, add yourself to the `docker` group so you do not have to run Docker commands as root:
+
+```shell script
+$ sudo usermod -aG docker your-username
+```
+
 Finally, download and install Docker Compose as a separate binary:
 
 ```shell script
@@ -101,8 +107,6 @@ command from the root directory of this repository (i.e., the folder containing 
 ```shell script
 $ docker-compose up
 ```
-
-**NOTE:** On Ubuntu, you will need to run `sudo docker-compose up` instead.
 
 The first time you run this command it may take a while to download and install dependencies.
 

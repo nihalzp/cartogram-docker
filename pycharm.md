@@ -53,7 +53,7 @@ $ rm pycharm-professional-2020.1.1.tar.gz
 
 **Note:** If the `wget` command is not found, you can install it by running `sudo apt install wget`.
 
-The PyCharm installation is now found in the `pycharm-professional-2020.1.1` folder within your WSL home directory.
+The PyCharm installation is now found in the `pycharm-2020.1.1` folder within your WSL home directory.
 
 #### Running PyCharm
 

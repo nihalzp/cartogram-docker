@@ -97,8 +97,6 @@ Docker containers will be saved and the application will gracefully come to a ha
 **NOTE:** If you make a breaking change to the code (e.g., you introduce a syntax error), 
 you will need to shut down the web application and start it again.
 
-## Accessing Source Files for `cartogram-web` and `cartogram-serverless` in Windows
+## Developing `cartogram-web` and `cartogram-serverless` with PyCharm
 
-You can access files in the WSL filesystem from within Windows by essentially mounting the WSL filesystem as a network drive in Windows. Doing this will allow you to access the source code files for `cartogram-web` and `cartogram-serverless` from within Windows, allowing you to develop these repositories using an IDE running natively on Windows.
-
-To do this, follow the guide in https://www.tenforums.com/tutorials/127857-access-wsl-linux-files-windows-10-a.html. 
+You should install the Linux version of PyCharm in the WSL to develop `cartogram-web` and `cartogram-serverless`. You can find instructions on how to do this in `pycharm.md`.

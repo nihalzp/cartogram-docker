@@ -8,7 +8,61 @@ To begin, you will need to install PyCharm Professional Edition.
 
 **Note:** If you are a student or educator at an accredited educational instutition, you can use the Professional Edition free of charge via a JetBrains Educational License. The easiest way to get this license is to first sign up for GitHub Education Benefits at https://education.github.com/discount_requests/new. Then, sign up for a JetBrains Educational License at https://www.jetbrains.com/shop/eform/students and simply sign in to your GitHub account to verify your student status.
 
-Download the Professional Edition at https://www.jetbrains.com/pycharm/download, and follow the installation instructions for your operating system.
+### Mac and Linux 
+
+Users of Linux and macOS should download the Professional Edition at https://www.jetbrains.com/pycharm/download and follow the installation instructions for your operating system.
+
+### Windows
+
+If you are using Windows, you should install the Linux version of PyCharm in the WSL. Graphical applications on Linux use the X Window System to draw their interfaces on screen. To run graphical Linux applications on the WSL, you must install an X Server on Windows, a desktop environment for the WSL, and configure WSL applications to use this X Server. We will first configure this, and then download and install PyCharm on the WSL.
+
+#### Installing VcXsrv and XFCE
+
+Follow the instructions at https://solarianprogrammer.com/2017/04/16/windows-susbsystem-for-linux-xfce-4/ to install the VcXsrv X Server for Windows and the XFCE desktop environment for the WSL.
+
+If the Linux desktop appears blurry, you can perform the following steps to remedy this:
+
+1. Open a WSL terminal and run
+
+    ```shell script
+    $ nano ~/.bashrc
+    ```
+
+    In the terminal editor interface that appears, use the down arrow key to navigate to the bottom of the file and insert the following lines:
+
+    ```
+    export GDK_SCALE=0.5
+    export GDK_DPI_SCALE=2
+    ```
+
+    Press Ctrl-O, Return, and then Ctrl-X to save and exit.
+
+2. Close all running instances of VcXsrv. In the Windows Explorer, navigate to `C:\Program Files\VcXsrv`. Right click on `vcxsrv.exe` and click on 'Properties'. In the window that appears, select the 'Compatility' tab. Click on 'Change high DPI settings'. In the window that appears, ensure 'Enable Override high DPI scaling' is checked, and select the 'Application' option. Click 'OK' twice to save these changes.
+
+With VcXsrv and XFCE installed, you can access your WSL Linux desktop by first starting VcXsrv, and then running the command `xfce4-session` in a WSL bash terminal.
+
+#### Downloading and Installing PyCharm
+
+Start the XFCE Desktop if you haven't already. Open a new terminal window (there should be a dock at the bottom of the desktop with a terminal icon). Then, download and extract the latest edition of PyCharm:
+
+```shell script
+$ wget https://download.jetbrains.com/python/pycharm-professional-2020.1.1.tar.gz
+$ tar xvf pycharm-professional-2020.1.1.tar.gz
+$ rm pycharm-professional-2020.1.1.tar.gz
+```
+
+**Note:** If the `wget` command is not found, you can install it by running `sudo apt install wget`.
+
+The PyCharm installation is now found in the `pycharm-professional-2020.1.1` folder within your WSL home directory.
+
+#### Running PyCharm
+
+Start the XFCE Desktop if you haven't already. Open a new terminal window. Then, run
+
+```shell script
+$ cd pycharm-2020.1.1/bin
+$ ./pycharm.sh
+```
 
 ## Setting up Docker with PyCharm
 

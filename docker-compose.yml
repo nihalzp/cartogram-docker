@@ -37,6 +37,8 @@ services:
       - '5000:5000'
     volumes:
       - ./cartogram-web:/root/web:cached
+    dns:
+      - 8.8.8.8
   serverless:
     build:
       context: .

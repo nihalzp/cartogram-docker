@@ -1,2 +1,4 @@
 cartogram-serverless/
 cartogram-web/
+web-production.env
+web.env

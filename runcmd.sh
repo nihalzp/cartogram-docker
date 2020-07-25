@@ -8,4 +8,8 @@ then
 	exit 1
 else
 	docker exec -it $CONTAINER "${@:2}"
+	if [ `uname -s` = "Linux" ]
+	then
+	    sudo chown -R $USER:$USER cartogram-web/ cartogram-serverless/
+	fi
 fi

@@ -7,9 +7,9 @@ the application can be automated. In addition to presenting an overview of the
 deployment architecture, this document provides step-by-step instructions for
 performing the following tasks:
 
-- Initial Setup for `cartogram-serverless`
-- Initial Setup for `cartogram-web`
-- Updating `cartogram-serverless` and `cartogram-web`
+- [Initial Setup for `cartogram-serverless`](#initial-setup-for-cartogram-serverless)
+- [Initial Setup for `cartogram-web`](#initial-setup-for-cartogram-web)
+- [Updating `cartogram-serverless` and `cartogram-web`](#updating-cartogram-serverlessand-cartogram-web)
 
 ## Architecture Overview
 

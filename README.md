@@ -179,7 +179,7 @@ $ docker-compose up
 ```
 Now the `cartogram-web` web server will run which you can access via http://localhost:5000 
 
-#### Making `cartogram-docker_serverless` Run by Fixing web.py Permission and Execution Errors
+#### Making `cartogram-docker_serverless` Run by Fixing simulate_lambda.py Permission and Execution Errors
 
 However, you may have noticed the `cartogram-serverless' is not running and has exited with error code 1 due to the permission error of simulate_lambda.py
 

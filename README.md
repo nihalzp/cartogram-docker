@@ -91,18 +91,25 @@ fork these two repositories so you have your own version of them. Note the URL t
 to use to clone both repositories.
 
 Now, clone your forked `cartogram-web` and `cartogram-serverless` into the root directory
-of *this* repository (i.e., the folder containing this readme). If you have SSH enabled for your GitHub
-account, this should look like:
+of *this* repository (i.e., the folder containing this readme — `cartogram_docker` folder). If you have SSH enabled for your GitHub account, this should look like:
 
 ```shell script
 $ git clone git@github.com:your-github-username/cartogram-web.git
 $ git clone git@github.com:your-github-username/cartogram-serverless.git
 ``` 
+If not, you can try:
+```shell script
+$ git clone https://github.com/your-github-username/cartogram-docker.git
+$ git clone https://github.com/your-github-username/cartogram-docker.git
+``` 
+After you are done, your `cartogram_docker` directory will look something like this:
+
+![](images/readme-6.png)
 
 ## Starting the go-cart.io Web Application
 
-To start the go-cart.io web application for local development and testing, run the following
-command from the root directory of this repository (i.e., the folder containing this readme):
+To start the go-cart.io web application for local development and testing, first open the Docker application that you have downloaded earlier, and then run the following
+command from the root directory of this repository (i.e., the folder containing this readme – `cartogram_docker` folder):
 
 ```shell script
 $ docker-compose up
@@ -124,7 +131,7 @@ Docker containers will be saved and the application will gracefully come to a ha
 **NOTE:** If you make a breaking change to the code (e.g., you introduce a syntax error), 
 you will need to shut down the web application and start it again.
 
-### MacOS: Potential Errors while Executing `docker-compose up` Command and Fixes
+### macOS: Potential Errors while Executing `docker-compose up` Command and Fixes
 On some macOS versions, after you the run the `docker-compose up` command, docker will fail to start  cartogram-docker_web and cartogram-docker_serverless because of permission and execution errors of web.py and simulate_lambda.py, respectively.
 
 #### Making `cartogram-docker_web` Run by Fixing web.py Permission and Execution Errors

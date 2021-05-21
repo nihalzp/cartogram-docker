@@ -123,3 +123,71 @@ Docker containers will be saved and the application will gracefully come to a ha
 
 **NOTE:** If you make a breaking change to the code (e.g., you introduce a syntax error), 
 you will need to shut down the web application and start it again.
+
+### MacOS: Potential Errors while Executing `docker-compose up` Command and Fixes
+On some macOS versions, after you the run the `docker-compose up` command, docker will fail to start  cartogram-docker_web and cartogram-docker_serverless because of permission and execution errors of web.py and simulate_lambda.py, respectively.
+
+#### Making `cartogram-docker_web` Run by Fixing web.py Permission and Execution Errors
+After running, `docker-compose up' command, you will see this:
+
+![](images/readme-1.png)
+
+To give permission, first nagvigate to the web.py parent folder which is .\cartogram-web\internal.
+
+```shell script
+$ cd cartogram-web
+$ cd internal
+```
+Now, run this command to give permission for the web.py file.
+
+```shell script
+$ chmod u+rwx web.py
+```
+Running this command will allow the docker to use web.py file. Now, run:
+
+ ```shell script
+$ cd ..
+$ cd ..
+$ docker-compose up
+```
+Aforementioned commands might fix the issue and make the docker run `cartogram-docker_web`. However, you might see the following execution error:
+
+![](images/readme-2.png)
+
+To fix the execution error, open the web.py file via a text editor. After you open, you will something like this:
+
+![](images/readme-3.png)
+
+Add this line on top of the document:
+
+ ```shell script
+#!/usr/bin/env python
+```
+![](images/readme-4.png)
+
+This will fix the execution error. Now run the `docker-compose up` command again.
+
+```shell script
+$ docker-compose up
+```
+Now the `cartogram-web` web server will run which you can access via http://localhost:5000 
+
+#### Making `cartogram-docker_serverless` Run by Fixing web.py Permission and Execution Errors
+
+However, you may have noticed the `cartogram-serverless' is not running and has exited with error code 1 due to the permission error of simulate_lambda.py
+
+![](images/readme-5.png)
+
+We follow the same process to fix the errors as we did for web.py
+
+Fixing simulate_lambda.py permission error:
+```shell script
+$ cd cartogram-serverless
+$ chmod u+rwx simulate_lambda.py
+```
+After fixing the permission error, if you run `docker-compose up`, now you will encounter the same execution error that we faced with web.py. You can fix it the same way. Open simulate_lambda.py via your text editor and add this line:
+
+ ```shell script
+#!/usr/bin/env python
+```
+This should fix the execution error.
